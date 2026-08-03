@@ -1,0 +1,23 @@
+{
+  "name": "application-context-engine",
+  "version": "0.1.0",
+  "description": "Compiles React + TypeScript applications into an Application Context IR for AI agents.",
+  "private": true,
+  "type": "commonjs",
+  "bin": {
+    "ace": "./bin/ace.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "ts-morph": "^28.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0"
+  }
+}
