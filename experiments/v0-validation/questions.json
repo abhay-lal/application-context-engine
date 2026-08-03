@@ -1,0 +1,52 @@
+[
+  {
+    "id": "Q1",
+    "question": "What actions or controls are available on the invoice detail page (for invoice INV-001)?",
+    "groundTruth": "Three: 'Approve Invoice' (button, click), 'Reject Invoice' (button, click), and 'Add Comment' (form submit)."
+  },
+  {
+    "id": "Q2",
+    "question": "What condition determines whether the 'Approve Invoice' action is enabled?",
+    "groundTruth": "It is enabled when invoice.canApprove is true AND isSubmitting is false (i.e. invoice.canApprove && !isSubmitting)."
+  },
+  {
+    "id": "Q3",
+    "question": "What condition determines whether the 'Reject Invoice' action is enabled?",
+    "groundTruth": "Same condition as Approve: invoice.canApprove && !isSubmitting."
+  },
+  {
+    "id": "Q4",
+    "question": "Is the 'Add Comment' action ever disabled?",
+    "groundTruth": "No — it has no enabling/disabling condition, it is always available."
+  },
+  {
+    "id": "Q5",
+    "question": "What object types does the invoice detail page represent, and what properties does each have?",
+    "groundTruth": "Invoice {id, status, amount, customerName, canApprove} and Customer {id, name, email}."
+  },
+  {
+    "id": "Q6",
+    "question": "What handler function runs when the user clicks 'Reject Invoice'?",
+    "groundTruth": "handleReject"
+  },
+  {
+    "id": "Q7",
+    "question": "What React state variables does the invoice detail page maintain, and what are their types?",
+    "groundTruth": "isSubmitting (boolean) and comment (string)."
+  },
+  {
+    "id": "Q8",
+    "question": "What routes exist in this application, and which component renders at each?",
+    "groundTruth": "/invoices renders InvoiceListPage; /invoices/:id renders InvoiceDetailPage."
+  },
+  {
+    "id": "Q9",
+    "question": "Which route would you navigate to in order to view a specific invoice, given its ID?",
+    "groundTruth": "/invoices/:id (e.g. /invoices/INV-001)."
+  },
+  {
+    "id": "Q10",
+    "question": "Besides Approve and Reject, is there another user-triggerable control on the invoice detail page, and how is it triggered?",
+    "groundTruth": "Yes — 'Add Comment', triggered via form submit (onSubmit), not a click."
+  }
+]

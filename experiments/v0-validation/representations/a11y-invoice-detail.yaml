@@ -1,0 +1,8 @@
+- heading "Invoice INV-001" [level=1]
+- paragraph: "Status: Pending"
+- paragraph: "Amount: $1240"
+- text: Jane Doe (jane@example.com)
+- button "Approve Invoice"
+- button "Reject Invoice"
+- textbox "Add a comment"
+- button "Add Comment"

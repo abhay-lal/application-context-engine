@@ -1,0 +1,8 @@
+- heading "Invoice INV-002" [level=1]
+- paragraph: "Status: Approved"
+- paragraph: "Amount: $860"
+- text: Bruce Wayne (bruce@example.com)
+- button "Approve Invoice" [disabled]
+- button "Reject Invoice" [disabled]
+- textbox "Add a comment"
+- button "Add Comment"

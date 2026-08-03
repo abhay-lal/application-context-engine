@@ -1,0 +1,19 @@
+{
+  "name": "v0-validation",
+  "version": "1.0.0",
+  "description": "ACE V0 hypothesis validation experiment",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture": "tsx capture.ts",
+    "eval": "tsx --env-file=.env eval.ts"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
+    "@types/node": "^26.1.2",
+    "playwright": "^1.62.1",
+    "tsx": "^4.23.4",
+    "typescript": "^7.0.2"
+  }
+}

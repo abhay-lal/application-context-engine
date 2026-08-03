@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "routes": [
+    { "id": "/invoices", "kind": "Route", "path": "/invoices", "component": "InvoiceListPage" },
+    { "id": "/invoices/:id", "kind": "Route", "path": "/invoices/:id", "component": "InvoiceDetailPage" }
+  ],
+  "objects": [
+    {
+      "id": "Invoice",
+      "kind": "Object",
+      "component": "InvoiceDetailPage",
+      "properties": [
+        { "name": "id", "type": "string" },
+        { "name": "status", "type": "'Pending' | 'Approved' | 'Rejected'" },
+        { "name": "amount", "type": "number" },
+        { "name": "customerName", "type": "string" },
+        { "name": "canApprove", "type": "boolean" }
+      ]
+    },
+    {
+      "id": "Customer",
+      "kind": "Object",
+      "component": "InvoiceDetailPage",
+      "properties": [
+        { "name": "id", "type": "string" },
+        { "name": "name", "type": "string" },
+        { "name": "email", "type": "string" }
+      ]
+    }
+  ],
+  "state": [
+    { "id": "isSubmitting", "kind": "State", "source": "useState", "type": "boolean", "component": "InvoiceDetailPage" },
+    { "id": "comment", "kind": "State", "source": "useState", "type": "string", "component": "InvoiceDetailPage" }
+  ],
+  "actions": [
+    {
+      "id": "InvoiceDetailPage.approveInvoice",
+      "kind": "Action",
+      "label": "Approve Invoice",
+      "component": "InvoiceDetailPage",
+      "trigger": "onClick",
+      "handler": "handleApprove",
+      "enabled": { "expression": "invoice.canApprove && !isSubmitting", "variable": "isSubmitting", "negated": true }
+    },
+    {
+      "id": "InvoiceDetailPage.rejectInvoice",
+      "kind": "Action",
+      "label": "Reject Invoice",
+      "component": "InvoiceDetailPage",
+      "trigger": "onClick",
+      "handler": "handleReject",
+      "enabled": { "expression": "invoice.canApprove && !isSubmitting", "variable": "isSubmitting", "negated": true }
+    },
+    {
+      "id": "InvoiceDetailPage.addComment",
+      "kind": "Action",
+      "label": "Add Comment",
+      "component": "InvoiceDetailPage",
+      "trigger": "onSubmit",
+      "handler": "handleAddComment",
+      "enabled": null
+    }
+  ],
+  "edges": [
+    { "from": "/invoices", "to": "InvoiceListPage", "kind": "renders" },
+    { "from": "/invoices/:id", "to": "InvoiceDetailPage", "kind": "renders" },
+    { "from": "InvoiceDetailPage.approveInvoice", "to": "isSubmitting", "kind": "enabled-by" },
+    { "from": "InvoiceDetailPage.rejectInvoice", "to": "isSubmitting", "kind": "enabled-by" }
+  ]
+}

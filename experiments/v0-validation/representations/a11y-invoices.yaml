@@ -1,0 +1,11 @@
+- heading "Invoices" [level=1]
+- list:
+  - listitem:
+    - link "INV-001 — Jane Doe ($1240)":
+      - /url: /invoices/INV-001
+  - listitem:
+    - link "INV-002 — Bruce Wayne ($860)":
+      - /url: /invoices/INV-002
+  - listitem:
+    - link "INV-003 — Diana Prince ($430)":
+      - /url: /invoices/INV-003
