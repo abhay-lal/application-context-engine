@@ -1,5 +1,7 @@
 # Application Context Engine
 
+[![Test](https://github.com/abhay-lal/application-context-engine/actions/workflows/test.yml/badge.svg)](https://github.com/abhay-lal/application-context-engine/actions/workflows/test.yml)
+
 Application Context Engine (ACE) is an AI-native compiler and analysis engine that transforms applications into structured context representations. Instead of forcing AI agents to understand rendered interfaces, ACE extracts the application's objects, actions, state, workflows, and relationships directly from source code, enabling faster, cheaper, and more reliable reasoning.
 
 - **What is it?** An engine/compiler.
@@ -94,6 +96,10 @@ The compiled output is called ACIR (Application Context IR) — a compact JSON d
 ## Roadmap
 
 See [ROADMAP.md](./ROADMAP.md) for what's implemented, known limitations, and what's planned.
+
+## Contributing
+
+Contributions are welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, project layout, and ground rules. [ROADMAP.md](./ROADMAP.md)'s "Known limitations" and "Planned" sections are the most concrete places to start.
 
 ## License
 
